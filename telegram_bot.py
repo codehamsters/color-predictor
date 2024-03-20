@@ -59,7 +59,7 @@ def fetch_initial_data():
 
 def fetch_color_for_period():
     # Fetch color for a specific period from the API
-    url = f"https://lucky66-api.glitch.me/INR/game/record/"
+    url = "https://lucky66-api.glitch.me/INR/game/record/"
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
