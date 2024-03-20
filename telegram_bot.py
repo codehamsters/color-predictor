@@ -1,3 +1,4 @@
+import time
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
@@ -82,6 +83,7 @@ async def main():
     while True:
         predicted_color = predictor.predict_color()
         await bot.send_message(chat_id=CHAT_ID, text=f"Predicted {prev_data['period'].split('S')[0] + 'S' + str(int(prev_data['period'].split('S')[1])+1)}:{predicted_color}")
+        time.sleep(180)
         new_data = fetch_color_for_period()
         while new_data["period"] == prev_data["period"]:
             new_data = fetch_color_for_period()
