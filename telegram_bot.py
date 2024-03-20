@@ -65,7 +65,7 @@ def fetch_color_for_period():
         data = response.json()
         return data[0]
     else:
-        raise Exception(f"Failed to fetch data from the API.")
+        raise Exception("Failed to fetch data from the API.")
 
 async def main():
     predictor = ColorPredictor()
